@@ -1,0 +1,192 @@
+\chapter{State of The Art}
+\label{chap_2}
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\qquad  Analyzing the theoretical concepts essential for our project and the various instruments at our disposal is an unavoidable stage in achieving the project's objectives. As a result, we'll start with a description of Cloud Computing. Following that, we'll go through DevOps methods, followed by a talk on Multi-Account Strategy in the Cloud, which will help us create a better solution.
+
+\newpage
+
+\section{Cloud Computing}
+\qquad First, we'll go through the basics of Cloud Computing, including its definition, characteristics, service models, and deployment models. Then we'll look at some of the various cloud providers before diving into AWS compute offerings.
+
+\subsection{Definition}
+\qquad 
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+\subsection{Characteristics of Cloud Computing}
+\qquad 
+These five characteristics of cloud computing are what makes the technology so in-demand today: 
+
+\begin{itemize}[label=\textbullet]
+    \item \textbf{On-demand Self Service:} Cloud computing allows users themselves to provision, manage, and monitor resources in real-time without the need for human interaction. This is usually done through a web-based self-service management console, an API, or a command-line tool.
+    \item \textbf{Broad Network Access:} Cloud computing is accessed over a network, which is usually the internet. Meanwhile, private cloud services might be accessed from anywhere within the company.
+    \item \textbf{Resource Pooling and Multi-tenancy:} Computing resources like networks, servers, storage, applications, and services can be pooled to serve numerous customers by logically separating them. This is accomplished through the use of a multi-tenant paradigm, which enables several clients to utilize the same application or physical infrastructure while maintaining data confidentiality and privacy.
+    \newpage
+    \item \textbf{Rapid Elasticity:} Cloud computing facilitates the rapid and automated provisioning and disposal of resources. It also allows users to quickly and easily scale in response to demand.
+    \item \textbf{Measured Service:} Each occupant's resource usage is tracked, monitored, managed, and reported on. This provides both the service provider and the customer with transparency.
+
+\end{itemize} 
+
+\subsection{Service models}
+\qquad 
+
+Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS) are the three core concepts of Cloud architecture. As shown in figure \ref{fig:cloudmodels}, each service model reduces the ratio of client intervention and control over the end service as it progresses from left to right. In IaaS, the cloud provider manages the operating system and underpinning infrastructure, while the user manages the layers above the operating system. When moving to PaaS, the customer relinquishes management of the Middleware and Runtime layers, focusing instead on the App and its data. The cloud provider oversees everything and offers the final software as a service that runs on the cloud in the case of SaaS.
+
+\begin{figure}[!h]
+    \centering
+    \fbox{\includegraphics[scale=0.6]{figures/placeholder.png}}
+    \caption{Cloud Service Models}
+    \label{fig:cloudmodels}
+\end{figure}
+
+\qquad Every Cloud Service Model is best suited to a specific use case or user group. The most popular is SaaS, which anyone can use without needing to know anything about programming or cloud engineering. In fact, most of us use SaaS in our daily lives, such as Google Docs, Slack, Dropbox, and others. Because you only pay for the service/storage you use, SaaS pricing structures are simple, making it an excellent alternative for small enterprises and startups.
+
+\qquad Paas, on the other hand, is better for developers because it provides them with ready-to-use platforms to deploy their services. Because it provides a high level of abstraction and delegates infrastructure, security, scaling, as well as patching and upgrading operating systems to the cloud provider, this service model can significantly speed up development. PaaS also has the benefit of a pay-as-you-go pricing model, which is comparable to SaaS and can be very cost-effective.   
+
+\qquad IaaS is the most sophisticated because it gives engineers full control over the provisioning and management of a wide range of computing infrastructures, including storage, servers, and networking hardware. IaaS is by far the most difficult to manage because it necessitates expertise in a wide range of engineering fields, including network, security, and operating systems. However, An IaaS solution can save a great deal of money and boost efficiency if it's well-designed and implemented. The IaaS pricing model is also complicated because it includes paying for provisioned resources, whether or not they are used. 
+
+
+\subsection{Deployment models} 
+\qquad There are five cloud deployment models:
+
+\begin{itemize}[label=\textbullet]
+    \item \textbf{Public Cloud:} The public cloud is one in which cloud infrastructure services are made available to the general public or major industry groups via the internet. In this cloud model, the infrastructure is owned by the entity that provides the cloud services, not by the consumer.
+    \item \textbf{Private Cloud:} The public cloud deployment model is diametrically opposed to the private one. This technology could be housed on a physical infrastructure owned and controlled by the customer.
+    \item \textbf{Hybrid cloud:} Hybrid cloud computing provides the best of both worlds by bridging the public and private worlds with a layer of proprietary software.
+    \newpage
+    \item \textbf{Community cloud:} As the title suggests, it is utilized by many companies with comparable needs. It hosts a highly specialized business application that several enterprises use.
+    \item \textbf{Multi-cloud:} It is comparable to the hybrid cloud deployment strategy, which blends public and private cloud resources. Instead of combining private and public clouds, multi-cloud uses an extensive range of public clouds.
+\end{itemize} 
+
+\subsection{Cloud providers}
+\qquad Four cloud service providers dominate the global cloud market: Alibaba in China and Asia-Pacific, and AWS, Microsoft, and Google in the rest of the globe.
+
+ We can see by examining the cloud market using the Gartner Magic Quadrant\ref{fig:cloudleader}, that Amazon AWS, Microsoft Azure, and Google Cloud are assuming market leadership:
+
+
+\begin{figure}[!h]
+    \centering
+    \fbox{\includegraphics[scale=0.3]{figures/placeholder.png}}
+    \caption{Top Cloud Service Provider}
+    \label{fig:cloudleader}
+    \cite{top_cloud_provider}
+\end{figure}
+
+Amazon AWS will be discussed in further detail in the following section since we'll be using it as our primary cloud provider and as one of our partners.
+
+\subsection{AWS compute services}
+\qquad 
+
+Today, Amazon Web Services (AWS) is the world's leading public Cloud computing services provider. It owns and administers the network-connected hardware required for application services, while users configure and employ what they need using a web application or command lines.
+It is the most comprehensive and commonly used Cloud platform globally, with over 200 fully-featured services available from data centers around the world. Millions of customers, including the fastest-growing startups, most prominent corporations, and top government agencies, rely on AWS to save costs, become more agile, and innovate more quickly.
+
+The Amazon Web Services portfolio includes more than 100 services, including computation, databases, infrastructure management, application development, and security. These services are classified as follows:
+
+\begin{multicols}{3}
+    \begin{itemize}
+\item Compute
+\item Storage databases
+\item Data management
+\item Migration
+\item Hybrid cloud
+\item Networking
+\item Development tools
+\item Management
+\item Monitoring
+\item Security
+\item Governance
+\item Big data management
+\item Analytics
+\item Artificial intelligence (AI)
+\item Mobile development
+\item Messages and notification
+    \end{itemize}
+    \end{multicols}
+
+
+\section{DevOps}
+\qquad 
+
+This section will provide a basic description of DevOps before discussing its benefits. Then, we'll go through certain aspects of CI/CD pipelines in which DevOps plays an important part. 
+
+\subsection{Definition} 
+\qquad
+
+DevOps, an acronym for "development and operations," is a collection of techniques, technologies, and cultural philosophies that enable a company to produce applications and services fast. It also allows products to move quicker from the drawing board to the market than traditional software development since operations and development engineers collaborate closely throughout the lifecycle, from design to development to production support. Indeed, operations workers and developers frequently use many of the same technologies in tandem, helping the task move much more smoothly and quickly.
+
+As seen in the figure below\ref{fig:devopscycle}, DevOps team members carry out duties that are often divided among three teams: development(plan, code, and build), operations(release, deploy, and operate), and quality assurance(test and monitor).
+
+\begin{figure}[!h]
+    \centering
+    \fbox{\includegraphics[scale=0.3]{figures/placeholder.png}}
+    \caption{DevOps process}
+    \label{fig:devopscycle}
+\end{figure}
+
+
+\subsection{Benefits}
+\qquad
+
+Adopting the DevOps approach has various advantages:
+
+\begin{itemize}[label=\textbullet]
+    \item \textbf{Speed:} You may boost customer inventiveness, enhance consumer responsiveness, and accomplish productivity and development by moving quicker. The DevOps approach enables development and operations teams to meet these goals. It provides teams with the resources and methods to govern and upgrade applications more quickly.
+     \item \textbf{Fast deliver:} To accelerate the innovation and refinement of goods and enhance the pace and frequency of launches, we can meet consumer needs and gain a competitive advantage by introducing new features and correcting issues as soon as feasible.
+      \item \textbf{Scalability:} Infrastructure and construction processes may now be handled and managed at scale, thanks to DevOps. Automation and precision help handle complex systems in a practical and risk-free manner.
+       \item \textbf{Improved collaboration:} The DevOps strategy stresses topics such as accepting responsibility for building more successful teams. Development and operations teams collaborate extensively, exchanging responsibilities and merging procedures. As a consequence of this, they may eliminate inefficiencies and save time.
+        \item \textbf{Security:} Moving ahead with the DevOps strategy has no impact on security because of the automated compliance regulations, stricter controls, and configuration management approaches deployed. For example, we can detect and monitor enforcement at any scale by leveraging infrastructure as code and policy as code.
+         \item \textbf{Reliability:} Adoption of DevOps enhances service reliability by increasing the availability and connectivity of services required for the efficient operation of a business.
+\end{itemize} 
+
+
+\subsection{Infrastructure as Code - Terraform}
+
+Infrastructure as Code (IaC) refers to managing infrastructure (networks, virtual machines, load balancers, and connection architecture) in a descriptive model, utilizing the same versioning that the DevOps team does for source code.
+
+Among the advantages of the IaC, we distinguish:
+
+\begin{itemize}[label=\textbullet] 
+
+\item \textbf{Speed:} It enables you to automate all infrastructure processes and adjustments to save time and money while reducing the chance of human mistakes.
+
+\item \textbf{Source control:} The code can be verified against a shared repository for increased transparency and accountability.
+
+\item \textbf{Consistency:} It emphasizes predictable, repeatable methods for provisioning and modifying systems and their configuration.
+
+\item \textbf{Reusability:} It makes it easier to create reusable modules, such as those that mimic development and production environments.
+\end{itemize}
+
+IaC is supported by popular third-party platforms, such as Terraform, Ansible, Chef, and Pulumi, to manage automated infrastructure. 
+
+In our project, we will be using Terraform, an open-source IaC software tool created by HashiCorp. It uses a declarative configuration language called HCL developed by the same company. 
+
+Terraform will construct a deployment plan detailing resources to be created, updated, or destroyed using the configuration code (Desired state) and the present state referred to as the backend (Current state). Terraform can then interface with the Cloud API using particular providers to make the modifications.
+
+    \begin{figure}[!h]
+    \centering
+    \fbox{\includegraphics[scale=0.4]{figures/placeholder.png}}
+    \caption{Terraform Usage}
+    \label{fig:control-tower}
+    \cite{multi-account-aws}
+    
+    \end{figure}
+    
+
+\subsection{CI/CD} 
+
+\qquad
+CI/CD tools are at the foundation of DevOps and the key to its success. The abbreviation CI/CD has numerous meanings.
+The term CI refers to continuous integration, a type of automation. Continuous integration includes making regular changes to the application code, running all necessary tests, and committing the changes to a common repository. This method prevents working on a large block of code for a lengthy period and multiple components that may conflict with one another.
+
+The CD in CI/CD refers to either continuous delivery or continuous deployment, which are two highly similar words. However, there is a distinction between the two. Both models reflect automation for the pipeline's advanced phases; however, they are separated to demonstrate the high level of automation in specific instances.
+
+Typically, changes made to an application by developers are automatically vetted and uploaded to a repository (such as GitHub or a container registry), where the operations team will deploy them to an active production environment. The continuous delivery approach improves communication between the production and business teams. As a result, its primary aim is to make new code as simple as possible to implement.
+
+On the other hand, Continuous deployment refers to the automatic movement of developer changes from the repository to the production area, where customers may use them. This strategy frees up overburdened operations personnel from manual tasks that stymie application delivery. It is based on continuous delivery and automates the next pipeline stage.
+
+\section*{Conclusion}
+
+We offered the ideas and terminology necessary for understanding the context of our project in this chapter. In the next chapter, we will go over how we implemented the CI/CD pipeline for our project and how we overcame the hurdles.
+
+\addcontentsline{toc}{section}{Conclusion} 
+\qquad
+

@@ -1,0 +1,141 @@
+\chapter{Continuous Integration and Continuous Delivery}
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction} 
+\qquad 
+
+Now that we have the product and its monitoring dashboard's infrastructure, we need a mechanism to automate their deployment across numerous accounts. Performing the deployment manually can be time-consuming and prone to human mistakes.
+This chapter will present some AWS services that will enable us to manipulate resources across accounts. Then, we'll go through the design of our CI/CD pipeline and how it's deployed and maintained.
+
+\label{chap_5}
+\newpage
+\section{CI/CD Pipeline }
+\qquad 
+
+\subsection{Continuous Integration \& Delivery}
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{Requirements}
+\qquad 
+
+Since the product is developed and entirely maintained by entity-y, our pipeline will only be responsible for releasing new versions of the product as well as deploying infrastructure changes.
+
+The followings are the functional and non-functional requirements of our pipeline. 
+
+\textbf{Functional Requirements:}
+
+\begin{itemize}[label=\textbullet]
+
+\item \textbf{Pulling resources:} The pipeline should have access to pull required artifacts and code source.
+
+\item \textbf{Automated Build:} The pipeline must be able to automatically build required artifacts.
+
+\item \textbf{Automated Release:} The pipeline must be able to automatically release artifacts to artifact repository.
+
+\item \textbf{Automated Deployment:} The pipeline must be able to automatically deploy the product and it's underlying infrastructure. 
+
+\item \textbf{Automated E2E test:} The pipeline must be able to automatically perform end-to-end test on the latest deployed version to confirm that the product and the infrastructure are behaving as expected. 
+
+\end{itemize}
+
+\textbf{None-Functional Requirements:} 
+
+\begin{itemize}[label=\textbullet]
+
+\item \textbf{Pipeline as code:} The pipeline should have a versioned life-cycle helping us to ensure better maintainability and easy replication of the pipeline.  
+
+\item \textbf{Idempotence:} The pipeline should maintain the same predictable behavior when deploying changes.
+
+\item \textbf{Performance:} The pipeline should be able to deploy changes within a reasonable amount of time.
+\item \textbf{Reliability and maintainability:} The pipeline should be likely to work correctly. In case of failure, the pipeline should be easily repaired.  
+
+\item \textbf{Security:} The pipeline should be protected against unwanted access. It should also protect secrets and password used during the build and deployment phases. 
+
+\item \textbf{Usability:} A reasonably familiar person should be able to initiate and debug the pipeline.
+\end{itemize}
+
+\subsection{Accounts setup}
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph.
+
+\section{Pipeline design}
+\qquad 
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+\subsection{Stages}
+
+
+\qquad placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{Sourcing stage}
+
+
+\qquad placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{Build Stage}
+\qquad placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{Infrastructure Deployment}
+
+\quad
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+
+
+\subsection{Dashboard Deployment}
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{E2E testing}
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\section{Pipeline deployment}
+
+\subsection{Project structure}
+
+\quad placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+\subsection{Results}
+
+placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph, placeholder paragraph,
+
+
+
+After its first execution, the pipeline takes around 12 minutes to finish all its steps. The following table \ref{tab:execution-time} breaks downs the average execution time by stage calculated over the last six executions:  \\
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{DAE8FC} 
+Steps                & Average duration           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+Build                & 2 min 21 seconds           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+Infrastructure Plan  & 1 min 45 seconds           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+Infrastructure Apply & 2 min 30 seconds           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+Dashboard Plan       & 1 min 53 seconds           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+Dashboard Apply      & 1 min 50 seconds           \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+E2E testing          & 2 min                      \\ \hline
+\rowcolor[HTML]{9B9B9B} 
+\textbf{TOTAL}       & \textbf{12 min 19 seconds} \\ \hline
+\end{tabular}
+\caption{Pipeline execution time.}
+\label{tab:execution-time}
+\end{table}
+
+
+As for now, the pipeline is fast enough to cover our needs, and it's fully automated and doesn't require any manual intervention (except for manual approval if needed). It also inherits the security provided by the IAM service making it only accessible on write to people granted access to the tooling account. We can also make custom roles to allow read-only access to the pipeline when needed. 
+\clearpage
+
+\section*{Conclusion}
+
+In this chapter, we described the different steps of our CI/CD pipeline and the technical obstacles we encountered. We've also provided a high-level overview of deploying our pipelines across different Terraform projects. The final findings demonstrate that we satisfied our earlier requirements for our pipelines.
+
+\addcontentsline{toc}{section}{Conclusion} 
+\qquad 
